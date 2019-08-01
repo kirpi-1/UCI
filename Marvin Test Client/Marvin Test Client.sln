@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Marvin Test Client", "Marvin Test Client\Marvin Test Client.vcproj", "{BB1D1A6B-A40F-4A1B-BE4C-9AA5B19281A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB1D1A6B-A40F-4A1B-BE4C-9AA5B19281A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BB1D1A6B-A40F-4A1B-BE4C-9AA5B19281A3}.Debug|Win32.Build.0 = Debug|Win32
+		{BB1D1A6B-A40F-4A1B-BE4C-9AA5B19281A3}.Release|Win32.ActiveCfg = Release|Win32
+		{BB1D1A6B-A40F-4A1B-BE4C-9AA5B19281A3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

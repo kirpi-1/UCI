@@ -1,0 +1,7 @@
+class Buffer{
+public:
+	data();
+
+
+
+};
