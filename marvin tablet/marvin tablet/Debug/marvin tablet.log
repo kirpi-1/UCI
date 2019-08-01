@@ -1,0 +1,47 @@
+﻿Build started 7/10/2012 10:35:50 AM.
+     1>Project "C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\marvin tablet\marvin tablet.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\".
+       InitializeBuildStatus:
+         Creating "Debug\marvin tablet.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\marvin tablet.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\marvin tablet.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt MainFrm.cpp "marvin tablet.cpp" "marvin tabletDoc.cpp" "marvin tabletView.cpp"
+         marvin tabletView.cpp
+         marvin tabletDoc.cpp
+         marvin tablet.cpp
+         MainFrm.cpp
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0409" /IDebug\ /nologo /fo"Debug\marvin tablet.res" "marvin tablet.rc" 
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\marvin tablet.exe.embed.manifest.res" "Debug\marvin tablet_manifest.rc" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\marvin tablet.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.lib" /MACHINE:X86 "Debug\marvin tablet.res"
+         "Debug\marvin tablet.exe.embed.manifest.res"
+         Debug\MainFrm.obj
+         "Debug\marvin tablet.obj"
+         "Debug\marvin tabletDoc.obj"
+         "Debug\marvin tabletView.obj"
+         Debug\stdafx.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\marvin tablet.exe.embed.manifest" /manifest "Debug\marvin tablet.exe.intermediate.manifest" "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\marvin tablet.exe.embed.manifest.res" "Debug\marvin tablet_manifest.rc" 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\marvin tablet.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.lib" /MACHINE:X86 "Debug\marvin tablet.res"
+         "Debug\marvin tablet.exe.embed.manifest.res"
+         Debug\MainFrm.obj
+         "Debug\marvin tablet.obj"
+         "Debug\marvin tabletDoc.obj"
+         "Debug\marvin tabletView.obj"
+         Debug\stdafx.obj
+         marvin tablet.vcxproj -> C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\Debug\marvin tablet.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\marvin tablet.unsuccessfulbuild".
+         Touching "Debug\marvin tablet.lastbuildstate".
+     1>Done Building Project "C:\Users\zack\Dropbox\UCI\Lab\Visual Studio 2010\marvin tablet\marvin tablet\marvin tablet.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.58
