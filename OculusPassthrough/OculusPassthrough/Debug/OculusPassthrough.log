@@ -1,0 +1,21 @@
+﻿Build started 3/13/2015 4:35:10 PM.
+     1>Project "c:\Users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\OculusPassthrough\OculusPassthrough.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\OculusPassthrough.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\opencv\build\x64\vc10\..\..\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt OculusPassthrough.cpp
+         OculusPassthrough.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\Debug\OculusPassthrough.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\opencv\build\x64\vc10\lib opencv_calib3d242d.lib opencv_contrib242d.lib opencv_core242d.lib opencv_features2d242d.lib opencv_flann242d.lib opencv_gpu242d.lib opencv_highgui242d.lib opencv_imgproc242d.lib opencv_legacy242d.lib opencv_ml242d.lib opencv_nonfree242d.lib opencv_objdetect242d.lib opencv_ocl2410d.lib opencv_photo242d.lib opencv_stitching242d.lib opencv_superres2410d.lib opencv_ts242d.lib opencv_video242d.lib opencv_videostab242d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\OculusPassthrough.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\Debug\OculusPassthrough.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\Debug\OculusPassthrough.lib" /MACHINE:X86 Debug\OculusPassthrough.exe.embed.manifest.res
+         Debug\OculusPassthrough.obj
+     1>OculusPassthrough.obj : error LNK2019: unresolved external symbol "void __cdecl cv::fastFree(void *)" (?fastFree@cv@@YAXPAX@Z) referenced in function "public: __thiscall cv::Mat::~Mat(void)" (??1Mat@cv@@QAE@XZ)
+     1>OculusPassthrough.obj : error LNK2019: unresolved external symbol "public: void __thiscall cv::Mat::deallocate(void)" (?deallocate@Mat@cv@@QAEXXZ) referenced in function "public: void __thiscall cv::Mat::release(void)" (?release@Mat@cv@@QAEXXZ)
+     1>OculusPassthrough.obj : error LNK2019: unresolved external symbol "int __cdecl cv::_interlockedExchangeAdd(int *,int)" (?_interlockedExchangeAdd@cv@@YAHPAHH@Z) referenced in function "public: void __thiscall cv::Mat::release(void)" (?release@Mat@cv@@QAEXXZ)
+     1>c:\users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\Debug\OculusPassthrough.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "c:\Users\awisti\documents\visual studio 2010\Projects\OculusPassthrough\OculusPassthrough\OculusPassthrough.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.35

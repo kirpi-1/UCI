@@ -1,0 +1,15 @@
+1
+MARVIN
+1
+TURNLR
+2	LEFT	RIGHT
+
+// NUMBEROFCONTROLSYSTEMS
+// 	for each controlsystem
+// CONTROLSYSTEM NAME
+// NUMBEROFCONTROLSTREAMS for this controlsystem
+// 	for each controlstream,
+// CONTROLSTREAMNAME
+//	NUMBERIOFACTIONSTREAMCONTRIBUTIONS
+//		for each asc
+//		ASNAME		

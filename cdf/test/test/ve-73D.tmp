@@ -1,0 +1,279 @@
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdio.h>
+#include <conio.h>
+#include <time.h>
+
+#define RAW (0)
+#define AMP (1)
+#define FREQ (2)
+typedef unsigned int uint;
+using namespace std;
+
+struct Date{
+	unsigned char minute;	//1 byte
+	unsigned char hour;		//1 byte
+	unsigned char day;		//1 byte
+	unsigned char month;	//1 byte
+	unsigned short year;	//2 bytes
+};
+
+//enum DataType{RAW,AMP,FREQ};
+const int NUMELECTRODES = 64;
+
+struct Coi{
+	float chanMat[NUMELECTRODES];
+};
+
+class Action{
+public:
+	Action(){};
+	Action(int numcoi){initialize(numcoi);};
+	~Action(){delete[] m;delete[] b;};
+	void initialize(int numcoi){m=new float[numcoi];b=new float[numcoi];};
+	float *m;
+	float *b;
+};
+
+struct SessionInfo{
+	short subjectNumber;	//2 bytes
+	Date date;				//6 bytes
+	short int dataType;		//2 bytes
+	short int numElectrodes;//2 bytes
+	unsigned int numcoi;	//4 bytes
+	unsigned int numactions;//4 bytes
+};
+
+struct FrameInfo{
+	unsigned int index;	//everything is 4 bytes, so it is always 4-byte aligned
+	unsigned int xlen;
+	unsigned int ylen;
+	float *data;
+};
+
+void writeFixedHeader(ofstream *outfile,SessionInfo *si){
+	unsigned int numframes = 0;
+	unsigned int headerSize = si->numcoi*sizeof(float)*NUMELECTRODES+
+		si->numactions*si->numcoi*2*sizeof(float);
+	
+	outfile->write(reinterpret_cast<char *>(&numframes),sizeof(unsigned int));
+	outfile->write(reinterpret_cast<char *>(&headerSize),sizeof(unsigned int));
+	outfile->write(reinterpret_cast<char *>(si),sizeof(SessionInfo));
+}
+void writeVariableHeader(ofstream *outfile, SessionInfo *si, Coi *cois, Action *actions){
+	//coi info
+	for(uint i=0;i<si->numcoi;i++){
+		for(int j=0;j<si->numElectrodes;j++)
+			outfile->write(reinterpret_cast<char *>(&(cois[i].chanMat[j])),sizeof(float));
+	}
+	//action info
+	for(uint i=0;i<si->numactions;i++){
+		for(uint j=0;j<si->numcoi;j++)
+			outfile->write(reinterpret_cast<char *>(&(actions[i].m[j])),sizeof(float));
+		for(uint j=0;j<si->numcoi;j++)
+			outfile->write(reinterpret_cast<char *>(&(actions[i].b[j])),sizeof(float));
+	}
+}
+void writeHeader(ofstream *outfile, SessionInfo *si, Coi *cois, Action *actions){
+	writeFixedHeader(outfile,si);
+	writeVariableHeader(outfile,si,cois,actions);
+}
+void writeFrame(ofstream fout, FrameInfo *frame){
+	fout.seekp(0,ios::end);
+	fout.write(reinterpret_cast<char *>(&(frame->index)),sizeof(uint));
+	fout.write(reinterpret_cast<char *>(&(frame->xlen)),sizeof(uint));
+	fout.write(reinterpret_cast<char *>(&(frame->ylen)),sizeof(uint));
+	for(uint y=0;y<frame->ylen;y++){
+		for(uint x=0;x<frame->xlen;x++)
+			fout.write(reinterpret_cast<char *>(&(frame->data[y*frame->xlen+x])),sizeof(float));
+	}
+}
+FrameInfo *readFrame(ifstream fin,int index = 0);
+FrameInfo *readFrame(ifstream fin,int index){
+	FrameInfo *fi = new FrameInfo;	
+	char *buffer = new char[512];
+	fin.read(buffer,sizeof(uint));
+	fi->index = *reinterpret_cast<int *>(buffer);
+	fin.read(buffer,sizeof(uint));
+	fi->xlen = *reinterpret_cast<int *>(buffer);
+	fin.read(buffer,sizeof(uint));
+	fi->ylen = *reinterpret_cast<int *>(buffer);
+	delete[] buffer;
+	buffer = new char[fi->xlen*fi->ylen*sizeof(float)];
+	fi->data = new float[fi->xlen*fi->ylen];
+	
+	fin.read(buffer,sizeof(float));
+	float *fdata = reinterpret_cast<float *>(buffer);
+
+	for(uint y=0;y<fi->ylen;y++){
+		for(uint x=0;x<fi->xlen;x++)			
+			fi->data[y*fi->xlen+x]=fdata[y*fi->xlen+x];
+	}
+	
+	return fi;
+}
+
+void readHeader(ifstream *fin, SessionInfo &si,Coi **cois, Action **actions){
+	char *fixedBuffer=new char[32]; //guaranteed to read the numframes, headerSize, and fixed header (4+4+20)
+	fin->seekg(sizeof(unsigned int)*2);
+	fin->read(fixedBuffer,sizeof(SessionInfo));
+	si = *reinterpret_cast<SessionInfo *>(fixedBuffer);			
+	delete[] fixedBuffer;
+	
+	uint size = 0;
+	if(si.numElectrodes > si.numactions*si.numcoi*2)
+		size=si.numElectrodes;
+	else
+		size=si.numactions*si.numcoi*2;
+	size *= sizeof(float)*2;
+	
+	char *memblock = new char[size];
+	
+	*cois = new Coi[si.numcoi];
+	*actions = new Action[si.numactions];
+	for(uint i=0;i<si.numactions;i++)
+		(*actions)[i].initialize(si.numcoi);
+
+	fin->read(memblock,sizeof(float)*si.numElectrodes*si.numcoi);	
+	float *floatblock = reinterpret_cast<float *>(memblock);
+	for(uint j=0;j<si.numcoi;j++){
+		for(int i=0;i<si.numElectrodes;i++){
+			(*cois)[j].chanMat[i]=floatblock[si.numElectrodes*j+i];
+		}
+	}
+	fin->read(memblock,sizeof(float)*si.numactions*si.numcoi*2);
+	floatblock = reinterpret_cast<float *>(memblock);
+	for(uint j=0;j<si.numactions;j++){
+		for(uint i=0;i<si.numcoi;i++)
+			(*actions)[j].m[i]=floatblock[j*si.numactions*si.numcoi*2+i];
+		for(uint i=0;i<si.numcoi;i++)
+			(*actions)[j].b[i]=floatblock[j*si.numactions*si.numcoi*2+si.numcoi+i];
+	}	
+	delete[] memblock;
+}
+
+
+int main(){	
+	////**********************************************make up data********************************
+	SessionInfo session;
+	session.subjectNumber = 26;
+	time_t curTime = time(NULL);
+	struct tm *timeinfo;
+	timeinfo = localtime(&curTime);	
+	session.date.minute = timeinfo->tm_min;
+	session.date.hour = timeinfo->tm_hour;
+	session.date.day = timeinfo->tm_mday;
+	session.date.month = timeinfo->tm_mon;
+	session.date.year = timeinfo->tm_year+1900;
+	session.dataType = AMP;
+	session.numElectrodes = NUMELECTRODES;
+	session.numcoi = 2;
+	Coi *cois=new Coi[session.numcoi];
+	for(int i=0;i<NUMELECTRODES/2;i++){
+		cois[0].chanMat[i]=1;
+		cois[1].chanMat[i]=0;
+	}
+	for(int i=NUMELECTRODES/2;i<NUMELECTRODES;i++){
+		cois[0].chanMat[i]=0;
+		cois[1].chanMat[i]=1;
+	}
+	session.numactions = 1;
+	Action *actions = new Action[session.numactions];
+	for(uint i=0;i<session.numactions;i++)
+		actions[i].initialize(session.numcoi);
+	actions[0].m[0]=0;
+	actions[0].m[1]=1;
+	actions[0].b[0]=2;
+	actions[0].b[1]=3;
+
+	//**********************************************end make up data******************************
+
+	//write header information
+	char *filename = "test.idf";
+	ofstream fout;
+	fout.open("test.idf",ios::out|ios::binary);
+	writeHeader(&fout,&session,cois,actions);
+	fout.close();
+
+
+
+	delete[] actions;
+	delete[] cois;	
+	
+	
+	
+	//**************read file**************
+	ifstream fin;
+	fin.open("test.idf",ios::in|ios::binary);
+	
+	fin.seekg(0,ios::end);
+	ifstream::pos_type size = fin.tellg();
+	fin.seekg(0,ios::beg);
+	cout << "size of infile:\t" << size << endl;
+	
+	
+	char *memblock = new char[512];	
+	fin.read(memblock,sizeof(unsigned int));
+	unsigned int readNumFrames = *(reinterpret_cast<unsigned int*>(memblock));
+	cout << endl << "readNumFrames: " << readNumFrames << endl;
+	fin.read(memblock,sizeof(unsigned int));
+	unsigned int readHeaderSize = *(reinterpret_cast<unsigned int*>(memblock));
+	cout << "readHeaderSize: " << readHeaderSize << endl;
+
+	SessionInfo readSession;	
+	readHeader(&fin,readSession,&cois,&actions);
+	
+	cout << "Subject Number: " << readSession.subjectNumber << endl;
+	cout << "Date: " << (unsigned int)readSession.date.hour << ":" << (unsigned int) readSession.date.minute << " "
+		<< (int)readSession.date.day << "/" << (int)readSession.date.month << "/" << (int)readSession.date.year << endl;
+	cout << "type: " << (uint)readSession.dataType << endl;
+	cout << "numElectrodes: " << readSession.numElectrodes << endl;
+	cout << "readNUMCOI: " << readSession.numcoi << endl;
+	cout << "readNUMACTIONS: " << readSession.numactions << endl;
+	
+	for(int i=0;i<NUMELECTRODES;i++){
+		printf("[%02d]: %.2f\t%.2f\n",i,cois[0].chanMat[i],cois[1].chanMat[i]);
+	}
+	for(uint i=0;i<readSession.numcoi;i++){
+		printf("[%d]: m = %.2f\tb = %.2f\n",i,actions[0].m[i],actions[0].b[i]);
+	}
+		
+	fin.close();
+	delete[] memblock;
+	delete[] cois;
+	delete[] actions;
+	
+	system("PAUSE");
+	_CrtDumpMemoryLeaks();
+	return 0;
+}
+
+/*
+void addThread(void *params){
+	for(int i=0;i<100;i++){
+		EnterCriticalSection(&cs);
+		for(int j=0;j<10;j++){			
+			a[j]=a[j]+1;
+			//for(int k=0;k<100000;k++);
+		}
+		LeaveCriticalSection(&cs);
+		Sleep(10);
+	}
+
+}
+
+void printThread(void *params){
+	for(int i=0;i<10;i++){
+		EnterCriticalSection(&cs);
+		for(int j=0;j<10;j++){						
+			printf("%d ",a[j]);
+		}
+		LeaveCriticalSection(&cs);
+		Sleep(10);
+	}
+}
+*/

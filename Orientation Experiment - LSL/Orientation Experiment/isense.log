@@ -1,0 +1,56 @@
+[00000.008] InterSense Library ver. 4.2381 32-bit
+[00000.011] Copyright 1998-2012 InterSense, LLC
+[00000.014] http://www.intersense.com
+[00000.017] Tel: 781-541-6330
+[00000.020]
+[00000.020] Mon Mar 06 13:08:09 2017
+[00000.023]
+[00000.023] Looking for InterSense tracking device number 1. Please wait 
+[00000.030] Invalid Handle (\\?\hid#vid_046b&pid_ff10&mi_00#7&16e2c993&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030})
+[00000.033] Invalid Handle (\\?\hid#vid_046b&pid_ff10&mi_01#7&cf4742f&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030})
+[00000.036] Invalid Handle (\\?\hid#vid_046d&pid_c064#6&2cf08c70&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030})
+[00000.039] Invalid Handle (\\?\hid#vid_413c&pid_2003#6&3093ad5&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030})
+[00000.048]
+[00000.048] File isports.ini is present and will be used.
+[00000.051] isports.ini: com6:bluetooth (PORT:6 TYPE:1 BAUD:0)
+[00000.055] isports.ini: com8:bluetooth (PORT:8 TYPE:1 BAUD:0)
+[00000.061]
+[00000.061] Looking for SDP devices (0.06)
+[00000.081] DEVWRN: Device config file not found: isradio.ini
+[00000.084] No HID devices connected
+[00000.088] Opening port: com6:bluetooth (S:1 N:0 DP:6 DT:1 RT:0)
+[00000.091]   Bluetooth: Trying to open port 1 (\\.\COM6). Time: 0.0910
+[00000.594]   Bluetooth: Trying to open port 1 (\\.\COM6). Time: 0.5937
+[00001.097]   Bluetooth: Trying to open port 1 (\\.\COM6). Time: 1.0968
+[00001.600]   Bluetooth: Trying to open port 1 (\\.\COM6). Time: 1.5999
+[00002.103] Failed to open \\.\COM6 (The system cannot find the file specified.)
+[00002.107] Opening port: com8:bluetooth (S:1 N:1 DP:8 DT:1 RT:0)
+[00002.110]   Bluetooth: Trying to open port 2 (\\.\COM8). Time: 2.1100
+[00002.613]   Bluetooth: Trying to open port 2 (\\.\COM8). Time: 2.6129
+[00003.117]   Bluetooth: Trying to open port 2 (\\.\COM8). Time: 3.1168
+[00003.620]   Bluetooth: Trying to open port 2 (\\.\COM8). Time: 3.6199
+[00004.123] Failed to open \\.\COM8 (The system cannot find the file specified.)
+[00004.130] DEVWRN: SDP initialization failed
+[00004.133] DEVMSG: Failed to set device configuration
+[00004.136] ERROR: Interface initialization failed
+[00004.139]
+[00004.139] No SDP Deviced found (4.14)
+[00004.141]
+[00004.141] Looking for UDP Broadcasts
+[00004.145] Windows Sockets 2.2
+[00004.151] Error binding socket (Requested broadcast address, but the appropriate flag was not set)
+[00004.154]   Checking UDP port 5001... SOCKET INIT ERROR
+[00004.156]   Checking UDP port 5001... NOT FOUND
+[00004.159] Error binding socket (Requested broadcast address, but the appropriate flag was not set)
+[00004.162]   Checking UDP port 5002... SOCKET INIT ERROR
+[00004.165]   Checking UDP port 5002... NOT FOUND
+[00004.168] Error binding socket (Requested broadcast address, but the appropriate flag was not set)
+[00004.171]   Checking UDP port 5003... SOCKET INIT ERROR
+[00004.174]   Checking UDP port 5003... NOT FOUND
+[00004.377]   Checking UDP port 5004... NOT FOUND
+[00004.381] Error binding socket (Requested broadcast address, but the appropriate flag was not set)
+[00004.384]   Checking UDP port 5005... SOCKET INIT ERROR
+[00004.387]   Checking UDP port 5005... NOT FOUND
+[00004.390]
+[00004.390] InterSense tracker not present
+[00004.394] Finished (4.39)

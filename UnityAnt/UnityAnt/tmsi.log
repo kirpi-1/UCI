@@ -1,0 +1,10 @@
+DllMain, Entry
+GetSADHandle, Entry
+GetInstanceId, Entry
+GetDevice, Entry
+GetDevice, GOT_hDeviceInfo
+GetDevice, NOT_SetupDiEnumDeviceInfo
+GetInstanceId, INSTANCE_NOT_FOUND
+Stop, Entry
+AddSlave, Entry
+DllMain, Entry

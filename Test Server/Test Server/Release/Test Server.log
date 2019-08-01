@@ -1,0 +1,17 @@
+﻿Build started 1/12/2015 4:35:52 PM.
+     1>Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\Test Server\Test Server\Test Server.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\Test Server.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         Test Server.vcxproj -> C:\Users\awisti\Documents\Visual Studio 2010\Projects\Test Server\Release\Test Server.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\Test Server.unsuccessfulbuild".
+         Touching "Release\Test Server.lastbuildstate".
+     1>Done Building Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\Test Server\Test Server\Test Server.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.26

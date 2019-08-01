@@ -1,0 +1,27 @@
+﻿Build started 10/22/2015 3:05:13 PM.
+     1>Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\OculusPassthrough\OculusPassthrough.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\OculusPassthrough.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /IC:\OculusSDK\LibOVR\Src /ID:\opencv\build\x64\vc10\..\..\include /IC:\OculusSDK\LibOVR\Include /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt OculusPassthrough.cpp
+         OculusPassthrough.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\x64\Debug\OculusPassthrough.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\opencv\build\x64\vc10\lib /LIBPATH:C:\OculusSDK\LibOVR\Lib\x64\VS2010 opencv_calib3d2410d.lib opencv_core2410d.lib opencv_features2d2410d.lib opencv_flann2410d.lib opencv_highgui2410d.lib opencv_imgproc2410d.lib opencv_ml2410d.lib opencv_objdetect2410d.lib opencv_photo2410d.lib opencv_stitching2410d.lib opencv_superres2410d.lib opencv_ts2410d.lib opencv_video2410d.lib opencv_videostab2410d.lib libovr64d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\OculusPassthrough.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\x64\Debug\OculusPassthrough.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\x64\Debug\OculusPassthrough.lib" /MACHINE:X64 x64\Debug\OculusPassthrough.exe.embed.manifest.res
+         x64\Debug\OculusPassthrough.obj
+         OculusPassthrough.vcxproj -> C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\x64\Debug\OculusPassthrough.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\OculusPassthrough.exe.embed.manifest" /manifest x64\Debug\OculusPassthrough.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         OculusPassthrough.vcxproj -> C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\x64\Debug\OculusPassthrough.exe
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\OculusPassthrough.unsuccessfulbuild".
+         Touching "x64\Debug\OculusPassthrough.lastbuildstate".
+     1>Done Building Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\OculusPassthrough\OculusPassthrough\OculusPassthrough.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.46

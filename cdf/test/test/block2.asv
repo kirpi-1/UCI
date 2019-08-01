@@ -1,0 +1,11 @@
+pool = [1:9];
+block = zeros(9,9);
+
+start = ceil(rand*9);
+for i=1:9
+    block(i,1) = start;
+    for j=2:9
+        remainingPool = setdiff(block(i,:),pool);
+        block(i,j) = remainingPool(rand*(9-j+1));
+    end
+    nextStartPool = setdiff(block(i,9),

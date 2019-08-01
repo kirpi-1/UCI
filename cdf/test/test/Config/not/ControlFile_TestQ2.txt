@@ -1,0 +1,15 @@
+1
+QUAKE2
+1
+TURNLR
+2	LEFT	RIGHT
+
+// NUMBEROFCONTROLSYSTEMS
+// 	for each controlsystem
+// CONTROLSYSTEM NAME
+// NUMBEROFCONTROLSTREAMS for this controlsystem
+// 	for each controlstream,
+// CONTROLSTREAMNAME
+//	NUMBERIOFDATASTREAMCONTRIBUTIONS
+//		for each dsc
+//		DSNAME		

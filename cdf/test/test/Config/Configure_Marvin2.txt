@@ -1,0 +1,6 @@
+D:\NeuroDev\NeuroMFC\Release\Config\COIFile_Marvin.txt
+D:\NeuroDev\NeuroMFC\Release\Config\FilterBank_Marvin.txt
+D:\NeuroDev\NeuroMFC\Release\Config\DataStream_Marvin2.txt
+D:\NeuroDev\NeuroMFC\Release\Config\ControlFile_Marvin.txt
+
+

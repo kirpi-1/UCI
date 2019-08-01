@@ -1,0 +1,31 @@
+﻿Build started 11/12/2014 2:23:57 PM.
+     1>Project "C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\UnityAnt\UnityAnt.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\UnityAnt.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\awisti\Documents\Visual Studio 2010\Projects\UnityAnt\UnityAnt" /I..\..\ /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\UnityAnt.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt UnityAnt.cpp
+         UnityAnt.cpp
+     1>UnityAnt.cpp(460): warning C4101: 'floatBuffer' : unreferenced local variable
+     1>UnityAnt.cpp(581): warning C4018: '>=' : signed/unsigned mismatch
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\Release\UnityAnt.exe" /INCREMENTAL:NO /NOLOGO Winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\UnityAnt.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\Release\UnityAnt.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\Release\UnityAnt.lib" /MACHINE:X86 Release\cAcquisition.obj
+         Release\cdf.obj
+         Release\stdafx.obj
+         Release\uANT.obj
+         Release\UnityAnt.obj
+         Release\zANT.obj
+         Generating code
+     1>c:\users\eemagine\documents\visual studio 2010\projects\unityant\unityant\cdf.cpp(243): warning C4700: uninitialized local variable 'f' used
+         Finished generating code
+         UnityAnt.vcxproj -> C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\Release\UnityAnt.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\Release\UnityAnt.exe;#1" /manifest Release\UnityAnt.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\UnityAnt.unsuccessfulbuild".
+         Touching "Release\UnityAnt.lastbuildstate".
+     1>Done Building Project "C:\Users\eemagine\Documents\Visual Studio 2010\Projects\UnityAnt\UnityAnt\UnityAnt.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.95

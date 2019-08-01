@@ -1,0 +1,40 @@
+﻿Build started 3/4/2014 8:08:21 PM.
+     1>Project "C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\GaitExperiment\GaitExperiment.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\GaitExperiment.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /Zp1 /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\GaitExperiment.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt cAcquisition.cpp cdf.cpp GaitExperiment.cpp icube.cpp isense.c metronome.cpp stdafx.cpp zANT.cpp
+         zANT.cpp
+         stdafx.cpp
+         metronome.cpp
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\metronome.cpp(94): warning C4244: '=' : conversion from 'ULONGLONG' to 'double', possible loss of data
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\metronome.cpp(99): warning C4018: '>=' : signed/unsigned mismatch
+         isense.c
+         icube.cpp
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\icube.cpp(20): warning C4244: '=' : conversion from 'DWORD' to 'WORD', possible loss of data
+         GaitExperiment.cpp
+         cdf.cpp
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\cdf.cpp(400): warning C4101: 'f' : unreferenced local variable
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\cdf.cpp(446): warning C4101: 'f' : unreferenced local variable
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\cdf.cpp(468): warning C4101: 'f' : unreferenced local variable
+     1>c:\users\cns lab\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\cdf.cpp(21): warning C4700: uninitialized local variable 'timeinfo' used
+         cAcquisition.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\Debug\GaitExperiment.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GaitExperiment.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\Debug\GaitExperiment.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\Debug\GaitExperiment.lib" /MACHINE:X86 Debug\GaitExperiment.exe.embed.manifest.res
+         Debug\cAcquisition.obj
+         Debug\cdf.obj
+         Debug\GaitExperiment.obj
+         Debug\icube.obj
+         Debug\isense.obj
+         Debug\metronome.obj
+         Debug\stdafx.obj
+         Debug\zANT.obj
+            Creating library C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\Debug\GaitExperiment.lib and object C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\Debug\GaitExperiment.exp
+     1>LINK : fatal error LNK1123: failure during conversion to COFF: file invalid or corrupt
+     1>Done Building Project "C:\Users\CNS Lab\Documents\Visual Studio 2010\Projects\GaitExperiment\GaitExperiment\GaitExperiment.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.35

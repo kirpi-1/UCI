@@ -1,0 +1,12 @@
+function frame = cdfReadFrameIndex(header,index,varargin)
+       %fseek(header.fileID,header.variableHeaderSize+28,'bof');
+        fseek(header.fileID,header.variableHeaderSize+28+512,'bof');
+        frame = cdfReadFrame(header.fileID);
+        while(frame.index~=index)
+            frame = cdfReadFrame(header.fileID);
+        end
+    else
+        fseek(header.fileID,varargin{1},'bof');
+        frame = cdfReadFrame(header.fileID);
+    end
+end

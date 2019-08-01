@@ -1,0 +1,6 @@
+D:\NeuroDev\NeuroMFC\Release\Config\COIFile_Q2_2.txt
+D:\NeuroDev\NeuroMFC\Release\Config\FilterBank_Q2.txt
+D:\NeuroDev\NeuroMFC\Release\Config\DataStream_Q2_2.txt
+D:\NeuroDev\NeuroMFC\Release\Config\ControlFile_Q2.txt
+
+

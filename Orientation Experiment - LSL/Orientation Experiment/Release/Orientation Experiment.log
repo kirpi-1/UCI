@@ -1,0 +1,37 @@
+﻿Build started 3/6/2017 1:31:58 PM.
+     1>Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Orientation Experiment\Orientation Experiment.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\Orientation Experiment.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\LabStreamingLayer\labstreaminglayer-master\LSL\liblsl\include" /I"C:\LabStreamingLayer\labstreaminglayer-master\LSL\liblsl\bin\\" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\Orientation Experiment.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "Orientation ExperimentDlg.cpp"
+         Orientation ExperimentDlg.cpp
+     1>Orientation ExperimentDlg.cpp(350): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>Orientation ExperimentDlg.cpp(352): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>Orientation ExperimentDlg.cpp(387): warning C4101: 'buff' : unreferenced local variable
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /ManifestFile:"Release\Orientation Experiment.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.lib" /MACHINE:X86 "Release\Orientation Experiment.res"
+         Release\cdf.obj
+         Release\icube.obj
+         Release\isense.obj
+         "Release\Orientation Experiment.obj"
+         "Release\Orientation ExperimentDlg.obj"
+         Release\stdafx.obj
+            Creating library C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.lib and object C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.exp
+         Generating code
+         Finished generating code
+         Orientation Experiment.vcxproj -> C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Release\Orientation Experiment.exe;#1" /manifest "Release\Orientation Experiment.exe.intermediate.manifest" "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Release\Orientation Experiment.unsuccessfulbuild".
+         Touching "Release\Orientation Experiment.lastbuildstate".
+     1>Done Building Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\Orientation Experiment - LSL\Orientation Experiment\Orientation Experiment.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.68

@@ -1,0 +1,34 @@
+﻿Build started 6/4/2014 2:42:36 PM.
+     1>Project "c:\Users\awisti\documents\visual studio 2010\Projects\zANT\zANT\zANT.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\zANT.unsuccessfulbuild".
+       GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\zANT.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt cAcquisition.cpp /clr:nostdlib 
+         cAcquisition.cpp
+     1>cAcquisition.cpp(145): warning C4018: '>' : signed/unsigned mismatch
+     1>cAcquisition.cpp(163): warning C4129: 'N' : unrecognized character escape sequence
+         All outputs are up-to-date.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\awisti\documents\visual studio 2010\Projects\zANT\Debug\zANT.dll" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\zANT.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\awisti\documents\visual studio 2010\Projects\zANT\Debug\zANT.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\cAcquisition.obj
+         Debug\cdf.obj
+         Debug\Stdafx.obj
+         Debug\zANT.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         zANT.vcxproj -> c:\users\awisti\documents\visual studio 2010\Projects\zANT\Debug\zANT.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\awisti\documents\visual studio 2010\Projects\zANT\Debug\zANT.dll;#2" /manifest Debug\zANT.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\zANT.unsuccessfulbuild".
+         Touching "Debug\zANT.lastbuildstate".
+     1>Done Building Project "c:\Users\awisti\documents\visual studio 2010\Projects\zANT\zANT\zANT.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.13

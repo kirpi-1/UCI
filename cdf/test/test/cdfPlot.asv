@@ -1,0 +1,12 @@
+function cdfPlot(header,data)
+    names = fieldnames(data);
+    
+    for i=1:size(names)       
+        h = figure();
+        figure('Name',names(1));
+        for j=1:header.numFreq
+            subplot(9,1,i);
+            plot(data(i,:));        
+        end
+    end
+end

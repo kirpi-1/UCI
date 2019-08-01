@@ -1,0 +1,18 @@
+﻿Build started 9/18/2014 4:47:23 PM.
+     1>Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\GaitExperiment\GaitExperiment\GaitExperiment.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\GaitExperiment.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         GaitExperiment.vcxproj -> C:\Users\awisti\Documents\Visual Studio 2010\Projects\GaitExperiment\Release\GaitExperiment.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\GaitExperiment.unsuccessfulbuild".
+         Touching "Release\GaitExperiment.lastbuildstate".
+     1>Done Building Project "C:\Users\awisti\Documents\Visual Studio 2010\Projects\GaitExperiment\GaitExperiment\GaitExperiment.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07

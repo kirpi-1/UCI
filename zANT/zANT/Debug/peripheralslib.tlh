@@ -1,0 +1,352 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (8a1e706b).
+//
+// c:\users\awisti\documents\visual studio 2010\projects\zant\zant\debug\peripheralslib.tlh
+//
+// C++ source equivalent of Win32 type library C:\\Program Files\\Neurofeedback\\lib\\PeripheralsLib.tlb
+// compiler-generated file created 06/04/14 at 14:20:44 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("ebf00be0-e21e-490b-aa4a-946548d98d01"))
+/* LIBID */ __PeripheralsLib;
+struct __declspec(uuid("ebf00be2-e21e-490b-aa4a-946548d98d01"))
+/* dispinterface */ _IAcquisitionEvents;
+struct /* coclass */ Acquisition;
+struct __declspec(uuid("ebf00be1-e21e-490b-aa4a-946548d98d01"))
+/* dual interface */ IAcquisition;
+struct /* coclass */ Eelite;
+struct __declspec(uuid("ebf00be3-e21e-490b-aa4a-946548d98d01"))
+/* dual interface */ IEelite;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IAcquisitionEvents, __uuidof(_IAcquisitionEvents));
+_COM_SMARTPTR_TYPEDEF(IAcquisition, __uuidof(IAcquisition));
+_COM_SMARTPTR_TYPEDEF(IEelite, __uuidof(IEelite));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("ebf00be2-e21e-490b-aa4a-946548d98d01"))
+_IAcquisitionEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT onNewData ( );
+    HRESULT onOverflow ( );
+    HRESULT onBufferError ( );
+};
+
+struct __declspec(uuid("c90987a1-d3aa-4a40-9826-399d4c462c20"))
+Acquisition;
+    // [ default ] interface IAcquisition
+    // [ default, source ] dispinterface _IAcquisitionEvents
+
+struct __declspec(uuid("ebf00be1-e21e-490b-aa4a-946548d98d01"))
+IAcquisition : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getlicensed))
+    _variant_t licensed;
+    __declspec(property(get=Getversion))
+    _variant_t version;
+    __declspec(property(get=Getconnected))
+    VARIANT_BOOL connected;
+    __declspec(property(get=Getstate,put=Putstate))
+    _variant_t state;
+    __declspec(property(get=GetdeviceInfo))
+    _variant_t deviceInfo;
+    __declspec(property(get=GetchannelCount))
+    unsigned long channelCount;
+    __declspec(property(get=GetsamplingRate,put=PutsamplingRate))
+    unsigned long samplingRate;
+    __declspec(property(get=Getmode,put=Putmode))
+    _variant_t mode;
+    __declspec(property(get=GetbufferLength,put=PutbufferLength))
+    double bufferLength;
+    __declspec(property(get=GetbufferInterval,put=PutbufferInterval))
+    double bufferInterval;
+    __declspec(property(get=GethasNewData))
+    VARIANT_BOOL hasNewData;
+    __declspec(property(get=GethasOverflown))
+    VARIANT_BOOL hasOverflown;
+    __declspec(property(get=GetchannelType))
+    unsigned long channelType[];
+    __declspec(property(get=GetfirstChannel,put=PutfirstChannel))
+    unsigned long firstChannel;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t Getlicensed ( );
+    _variant_t Getversion ( );
+    VARIANT_BOOL connect (
+        _bstr_t device,
+        unsigned long samplingRate,
+        _bstr_t libraryPath );
+    VARIANT_BOOL disconnect ( );
+    _variant_t getData (
+        const _variant_t & range,
+        VARIANT_BOOL asVariant );
+    HRESULT flushData ( );
+    VARIANT_BOOL Getconnected ( );
+    _variant_t Getstate ( );
+    void Putstate (
+        const _variant_t & pVal );
+    _variant_t GetdeviceInfo ( );
+    unsigned long GetchannelCount ( );
+    unsigned long GetsamplingRate ( );
+    void PutsamplingRate (
+        unsigned long pVal );
+    _variant_t Getmode ( );
+    void Putmode (
+        const _variant_t & pVal );
+    double GetbufferLength ( );
+    void PutbufferLength (
+        double pVal );
+    double GetbufferInterval ( );
+    void PutbufferInterval (
+        double pVal );
+    VARIANT_BOOL GethasNewData ( );
+    VARIANT_BOOL GethasOverflown ( );
+    unsigned long GetchannelType (
+        const _variant_t & vChannel );
+    _variant_t getTriggers ( );
+    _variant_t setupServer (
+        const _variant_t & vHost = vtMissing,
+        const _variant_t & vPort = vtMissing );
+    _variant_t writeDataToServer (
+        const _variant_t & vHost = vtMissing,
+        const _variant_t & vPort = vtMissing,
+        const _variant_t & vData = vtMissing );
+    _variant_t getDataFromServer (
+        const _variant_t & host,
+        const _variant_t & port,
+        const _variant_t & startTime,
+        const _variant_t & endTime,
+        VARIANT_BOOL asVariant );
+    _variant_t getHeaderFromServer (
+        const _variant_t & host = vtMissing,
+        const _variant_t & port = vtMissing );
+    _variant_t writeHeaderToServer (
+        const _variant_t & host = vtMissing,
+        const _variant_t & port = vtMissing,
+        const _variant_t & header = vtMissing );
+    _variant_t flushHeader (
+        const _variant_t & host = vtMissing,
+        const _variant_t & port = vtMissing );
+    _variant_t flushServerBuffer (
+        const _variant_t & host = vtMissing,
+        const _variant_t & port = vtMissing );
+    unsigned long GetfirstChannel ( );
+    void PutfirstChannel (
+        unsigned long pVal );
+    HRESULT _onReceiveThreadTimer ( );
+    HRESULT _onTransmitThreadTimer ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_licensed (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall get_version (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_connect (
+        /*[in]*/ BSTR device,
+        /*[in]*/ unsigned long samplingRate,
+        /*[in]*/ BSTR libraryPath,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_disconnect (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_getData (
+        /*[in]*/ VARIANT range,
+        /*[in]*/ VARIANT_BOOL asVariant,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_flushData ( ) = 0;
+      virtual HRESULT __stdcall get_connected (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_state (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall put_state (
+        /*[in]*/ VARIANT pVal ) = 0;
+      virtual HRESULT __stdcall get_deviceInfo (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall get_channelCount (
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall get_samplingRate (
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall put_samplingRate (
+        /*[in]*/ unsigned long pVal ) = 0;
+      virtual HRESULT __stdcall get_mode (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall put_mode (
+        /*[in]*/ VARIANT pVal ) = 0;
+      virtual HRESULT __stdcall get_bufferLength (
+        /*[out,retval]*/ double * pVal ) = 0;
+      virtual HRESULT __stdcall put_bufferLength (
+        /*[in]*/ double pVal ) = 0;
+      virtual HRESULT __stdcall get_bufferInterval (
+        /*[out,retval]*/ double * pVal ) = 0;
+      virtual HRESULT __stdcall put_bufferInterval (
+        /*[in]*/ double pVal ) = 0;
+      virtual HRESULT __stdcall get_hasNewData (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_hasOverflown (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_channelType (
+        /*[in]*/ VARIANT vChannel,
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall raw_getTriggers (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_setupServer (
+        /*[in]*/ VARIANT vHost,
+        /*[in]*/ VARIANT vPort,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_writeDataToServer (
+        /*[in]*/ VARIANT vHost,
+        /*[in]*/ VARIANT vPort,
+        /*[in]*/ VARIANT vData,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_getDataFromServer (
+        /*[in]*/ VARIANT host,
+        /*[in]*/ VARIANT port,
+        /*[in]*/ VARIANT startTime,
+        /*[in]*/ VARIANT endTime,
+        /*[in]*/ VARIANT_BOOL asVariant,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_getHeaderFromServer (
+        /*[in]*/ VARIANT host,
+        /*[in]*/ VARIANT port,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_writeHeaderToServer (
+        /*[in]*/ VARIANT host,
+        /*[in]*/ VARIANT port,
+        /*[in]*/ VARIANT header,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_flushHeader (
+        /*[in]*/ VARIANT host,
+        /*[in]*/ VARIANT port,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_flushServerBuffer (
+        /*[in]*/ VARIANT host,
+        /*[in]*/ VARIANT port,
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall get_firstChannel (
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall put_firstChannel (
+        /*[in]*/ unsigned long pVal ) = 0;
+      virtual HRESULT __stdcall raw__onReceiveThreadTimer ( ) = 0;
+      virtual HRESULT __stdcall raw__onTransmitThreadTimer ( ) = 0;
+};
+
+struct __declspec(uuid("c90987a2-d3aa-4a40-9826-399d4c462c20"))
+Eelite;
+    // [ default ] interface IEelite
+
+struct __declspec(uuid("ebf00be3-e21e-490b-aa4a-946548d98d01"))
+IEelite : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=Getlicensed))
+    _variant_t licensed;
+    __declspec(property(get=Getversion))
+    _variant_t version;
+    __declspec(property(get=Getconnected))
+    VARIANT_BOOL connected;
+    __declspec(property(get=GetDTR,put=PutDTR))
+    VARIANT_BOOL DTR;
+    __declspec(property(get=GetRTS,put=PutRTS))
+    VARIANT_BOOL RTS;
+    __declspec(property(get=GetCOMport))
+    _variant_t COMport;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t Getlicensed ( );
+    _variant_t Getversion ( );
+    VARIANT_BOOL connect (
+        const _variant_t & index = vtMissing );
+    VARIANT_BOOL disconnect ( );
+    VARIANT_BOOL Getconnected ( );
+    VARIANT_BOOL GetDTR ( );
+    void PutDTR (
+        VARIANT_BOOL pVal );
+    VARIANT_BOOL GetRTS ( );
+    void PutRTS (
+        VARIANT_BOOL pVal );
+    _variant_t GetCOMport ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_licensed (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall get_version (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+      virtual HRESULT __stdcall raw_connect (
+        /*[in]*/ VARIANT index,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_disconnect (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_connected (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_DTR (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall put_DTR (
+        /*[in]*/ VARIANT_BOOL pVal ) = 0;
+      virtual HRESULT __stdcall get_RTS (
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall put_RTS (
+        /*[in]*/ VARIANT_BOOL pVal ) = 0;
+      virtual HRESULT __stdcall get_COMport (
+        /*[out,retval]*/ VARIANT * pVal ) = 0;
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_PeripheralsLib =
+    {0xebf00be0,0xe21e,0x490b,{0xaa,0x4a,0x94,0x65,0x48,0xd9,0x8d,0x01}};
+extern "C" const GUID __declspec(selectany) DIID__IAcquisitionEvents =
+    {0xebf00be2,0xe21e,0x490b,{0xaa,0x4a,0x94,0x65,0x48,0xd9,0x8d,0x01}};
+extern "C" const GUID __declspec(selectany) CLSID_Acquisition =
+    {0xc90987a1,0xd3aa,0x4a40,{0x98,0x26,0x39,0x9d,0x4c,0x46,0x2c,0x20}};
+extern "C" const GUID __declspec(selectany) IID_IAcquisition =
+    {0xebf00be1,0xe21e,0x490b,{0xaa,0x4a,0x94,0x65,0x48,0xd9,0x8d,0x01}};
+extern "C" const GUID __declspec(selectany) CLSID_Eelite =
+    {0xc90987a2,0xd3aa,0x4a40,{0x98,0x26,0x39,0x9d,0x4c,0x46,0x2c,0x20}};
+extern "C" const GUID __declspec(selectany) IID_IEelite =
+    {0xebf00be3,0xe21e,0x490b,{0xaa,0x4a,0x94,0x65,0x48,0xd9,0x8d,0x01}};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\users\awisti\documents\visual studio 2010\projects\zant\zant\debug\peripheralslib.tli"
+
+#pragma pack(pop)

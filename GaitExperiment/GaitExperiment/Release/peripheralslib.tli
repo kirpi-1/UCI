@@ -1,0 +1,338 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (bce23d44).
+//
+// c:\users\awisti\documents\visual studio 2010\projects\gaitexperiment\gaitexperiment\release\peripheralslib.tli
+//
+// Wrapper implementations for Win32 type library C:\\Program Files\\Neurofeedback\\lib\\PeripheralsLib.tlb
+// compiler-generated file created 09/03/14 at 20:15:23 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _IAcquisitionEvents wrapper method implementations
+//
+
+inline HRESULT _IAcquisitionEvents::onNewData ( ) {
+    return _com_dispatch_method(this, 0x7d0, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _IAcquisitionEvents::onOverflow ( ) {
+    return _com_dispatch_method(this, 0x7d1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+inline HRESULT _IAcquisitionEvents::onBufferError ( ) {
+    return _com_dispatch_method(this, 0x7d2, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+//
+// interface IAcquisition wrapper method implementations
+//
+
+inline _variant_t IAcquisition::Getlicensed ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_licensed(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::Getversion ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IAcquisition::connect ( _bstr_t device, unsigned long samplingRate, _bstr_t libraryPath ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_connect(device, samplingRate, libraryPath, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IAcquisition::disconnect ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_disconnect(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IAcquisition::getData ( const _variant_t & range, VARIANT_BOOL asVariant ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_getData(range, asVariant, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IAcquisition::flushData ( ) {
+    HRESULT _hr = raw_flushData();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IAcquisition::Getconnected ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_connected(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IAcquisition::Getstate ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_state(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IAcquisition::Putstate ( const _variant_t & pVal ) {
+    HRESULT _hr = put_state(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IAcquisition::GetdeviceInfo ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_deviceInfo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline unsigned long IAcquisition::GetchannelCount ( ) {
+    unsigned long _result = 0;
+    HRESULT _hr = get_channelCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline unsigned long IAcquisition::GetsamplingRate ( ) {
+    unsigned long _result = 0;
+    HRESULT _hr = get_samplingRate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAcquisition::PutsamplingRate ( unsigned long pVal ) {
+    HRESULT _hr = put_samplingRate(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IAcquisition::Getmode ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_mode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IAcquisition::Putmode ( const _variant_t & pVal ) {
+    HRESULT _hr = put_mode(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IAcquisition::GetbufferLength ( ) {
+    double _result = 0;
+    HRESULT _hr = get_bufferLength(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAcquisition::PutbufferLength ( double pVal ) {
+    HRESULT _hr = put_bufferLength(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline double IAcquisition::GetbufferInterval ( ) {
+    double _result = 0;
+    HRESULT _hr = get_bufferInterval(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAcquisition::PutbufferInterval ( double pVal ) {
+    HRESULT _hr = put_bufferInterval(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IAcquisition::GethasNewData ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_hasNewData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IAcquisition::GethasOverflown ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_hasOverflown(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline unsigned long IAcquisition::GetchannelType ( const _variant_t & vChannel ) {
+    unsigned long _result = 0;
+    HRESULT _hr = get_channelType(vChannel, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IAcquisition::getTriggers ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_getTriggers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::setupServer ( const _variant_t & vHost, const _variant_t & vPort ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_setupServer(vHost, vPort, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::writeDataToServer ( const _variant_t & vHost, const _variant_t & vPort, const _variant_t & vData ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_writeDataToServer(vHost, vPort, vData, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::getDataFromServer ( const _variant_t & host, const _variant_t & port, const _variant_t & startTime, const _variant_t & endTime, VARIANT_BOOL asVariant ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_getDataFromServer(host, port, startTime, endTime, asVariant, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::getHeaderFromServer ( const _variant_t & host, const _variant_t & port ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_getHeaderFromServer(host, port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::writeHeaderToServer ( const _variant_t & host, const _variant_t & port, const _variant_t & header ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_writeHeaderToServer(host, port, header, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::flushHeader ( const _variant_t & host, const _variant_t & port ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_flushHeader(host, port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IAcquisition::flushServerBuffer ( const _variant_t & host, const _variant_t & port ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_flushServerBuffer(host, port, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline unsigned long IAcquisition::GetfirstChannel ( ) {
+    unsigned long _result = 0;
+    HRESULT _hr = get_firstChannel(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAcquisition::PutfirstChannel ( unsigned long pVal ) {
+    HRESULT _hr = put_firstChannel(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT IAcquisition::_onReceiveThreadTimer ( ) {
+    HRESULT _hr = raw__onReceiveThreadTimer();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAcquisition::_onTransmitThreadTimer ( ) {
+    HRESULT _hr = raw__onTransmitThreadTimer();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IEelite wrapper method implementations
+//
+
+inline _variant_t IEelite::Getlicensed ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_licensed(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IEelite::Getversion ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IEelite::connect ( const _variant_t & index ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_connect(index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IEelite::disconnect ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_disconnect(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IEelite::Getconnected ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_connected(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IEelite::GetDTR ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_DTR(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEelite::PutDTR ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_DTR(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IEelite::GetRTS ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_RTS(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEelite::PutRTS ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_RTS(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IEelite::GetCOMport ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_COMport(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
